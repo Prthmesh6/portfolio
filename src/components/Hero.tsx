@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowDownToLine } from "lucide-react";
+
 
 export default function Hero() {
   return (
@@ -39,10 +41,20 @@ export default function Hero() {
 
         <a
           href="/resume.pdf"
-          className="border border-gray-600 hover:border-blue-500 transition px-6 py-3 rounded-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group inline-flex items-center gap-3 px-8 py-4 font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40"
         >
-          Download Resume
+          <ArrowDownToLine className="w-5 h-5" />
+          View Resume
+
+          {/* Shine Effect */}
+          <span className="absolute inset-0 overflow-hidden rounded-xl">
+            <span className="absolute left-[-75%] top-0 h-full w-1/2 bg-white/10 transform skew-x-12 group-hover:animate-shine" />
+          </span>
         </a>
+
+
       </motion.div>
     </section>
   );
